@@ -1,5 +1,19 @@
 {
   "name": "attendance_app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^0.27.2",
+    "babel-preset-react": "^6.24.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "^6.3.0",
+    "react-toastify": "^9.0.8",
+    "react_ujs": "^2.6.2",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
 }

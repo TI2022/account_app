@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails',        '~> 5.1.6'
+gem 'rails',        '~> 7.0.0'
+gem "sprockets-rails"
 gem 'bootstrap-sass'
 gem 'bootstrap',    '~> 4.4.1'
 gem 'faker'
@@ -14,7 +15,7 @@ gem 'bootstrap-will_paginate'
 gem 'rails-i18n'
 gem 'bcrypt'
 gem 'puma',         '~> 3.7'
-gem 'sass-rails',   '~> 5.0'
+gem 'sass-rails'
 gem 'uglifier',     '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
@@ -26,9 +27,13 @@ gem 'devise'
 gem 'google-cloud-vision'
 gem 'prawn'
 gem 'prawn-table'
+gem 'react-rails'
+gem 'pg'
+gem 'matrix'
+gem 'webpacker', '~> 3.0'
+gem 'psych', '~> 3.1'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -37,15 +42,9 @@ group :development do
   gem 'binding_of_caller'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :production do
-  gem 'pg', '0.20.0'
 end
 
-
-# Windows環境ではtzinfo-dataというgemを含める必要があります
-# Mac環境でもこのままでOKです
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data'

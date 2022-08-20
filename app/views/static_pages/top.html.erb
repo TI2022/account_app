@@ -1,28 +1,2 @@
 <% provide(:title, "トップ") %>
-<div class="separator"></div>
-<% unless logged_in? %>
-  <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
-    <div class="mt-4">
-      <%= f.hidden_field :email, :value => "admin@email.com" %>
-      <%= f.hidden_field :password, :value => "password" %>
-      <%= f.hidden_field :remember_me, :value => "0" %>
-      <%= f.submit "ゲストログイン", class: "btn btn-success btn-login" %>
-    </div>
-  <% end %>
-<% end %>
-<h2 class="text-left">このWebアプリケーションの説明</h2>
-<div class="app-description">
-  <p>制作目的：フリーランスがラクに青色申告できるようにする。</p>
-  <p class="font-bold">主な機能</p>
-  <p>①帳簿作成機能。複合仕訳にも対応</p>
-  <p>②撮影したレシートから文字を認識して帳簿作成。</p>
-  <p>③主要簿、決算書への自動転記。</p>
-  <p>④主要簿、決算書をPDF、CSV形式でデータ出力。</p>
-  <p>⑤事業成績をグラフ化しビジュアルで分かりやすく表示。</p>
-  <p>⑥Saas化。</p>
-
-  <p class="font-bold">技術面</p>
-  <p>①Rails + postgresqlで帳簿の作成、レシート画像の保存。</p>
-  <p>②Google Cloud Vision APIを使用し、pythonでレシートのテキストデータを抽出。</p>
-  <p>③pythonとRailsのAPI連携。</p>
-</div>
+<div id="root"></div>

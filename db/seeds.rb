@@ -1,20 +1,26 @@
 User.create!(name: "管理者",
              email: "admin@email.com",
-             password: "password",
-             password_confirmation: "password",
+             password: "admin_p",
+             password_confirmation: "admin_p",
              admin: true)
 
 User.create!(name: "経理",
              email: "account@email.com",
-             password: "password",
-             password_confirmation: "password",
+             password: "account_p",
+             password_confirmation: "account_p",
              accounting: true)
 
 User.create!(name: "一般テストユーザー",
              email: "test@email.com",
-             password: "password",
-             password_confirmation: "password"
+             password: "test_p",
+             password_confirmation: "test_p"
              )
+
+User.create!(name: "ゲストユーザー",
+             email: "guest@email.com",
+             password: "guest_password",
+             password_confirmation: "guest_password"
+            )
 
 Ground.create!(fishing_ground_name: "四丁目",
               )

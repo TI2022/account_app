@@ -65,10 +65,20 @@
     <% else %>
       <li><%= link_to "ユーザー登録", signup_path %></li>
       <li><%= link_to "ログイン", login_path %></li>
+      <div class="divider"></div>
+      <li>
+        <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
+          <div class="mt-4">
+            <%= f.hidden_field :email, :value => "guest@email.com" %>
+            <%= f.hidden_field :password, :value => "guest_password" %>
+            <%= f.hidden_field :remember_me, :value => "0" %>
+            <%= f.submit "ゲストログイン", class: "btn btn-success btn-login" %>
+          </div>
+        <% end %>
+      </li>
     <% end %>
   </ul>
   
-
   <div id="navArea">
     <div class="nav">
       <div class="inner">
