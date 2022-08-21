@@ -2,6 +2,17 @@ Rails.application.routes.draw do
   
   # トップページ
   root 'static_pages#top'
+
+  get 'todos', to: 'site#index'
+  get 'todos/new', to: 'site#index'
+  get 'todos/:id/edit', to: 'site#index'
+  
+  namespace :api do
+    namespace :v1 do
+      delete '/todos/destroy_all', to: 'todos#destroy_all'
+      resources :todos, only: %i[index show create update destroy]
+    end
+  end
   
   # ユーザー登録ページ
   get '/signup', to: 'users#new'
@@ -15,20 +26,20 @@ Rails.application.routes.draw do
   # ユーザー
   resources :users
   
-  # 漁場
-  resources :grounds do
+  # # 漁場
+  # resources :grounds do
   
-    member do
-      get 'landing_show', to: 'landings#show'
-      delete 'landing_destroy', to: 'landings#destroy'
-    end
-    # 水揚げ
-    resources :landings, only: [:new, :create, :edit, :update]
+  #   member do
+  #     get 'landing_show', to: 'landings#show'
+  #     delete 'landing_destroy', to: 'landings#destroy'
+  #   end
+  #   # 水揚げ
+  #   resources :landings, only: [:new, :create, :edit, :update]
   
-  end
+  # end
   
-  get 'landing_index', to: 'landings#index'
-  get 'landing_pre_new', to: 'landings#pre_new'
+  # get 'landing_index', to: 'landings#index'
+  # get 'landing_pre_new', to: 'landings#pre_new'
   
   # 帳簿（売上帳）
   resources :accounts do
